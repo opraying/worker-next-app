@@ -1,18 +1,18 @@
-import Link from 'next/link'
+import Link from "next/link";
 
-export const runtime = 'edge';
+export const runtime = "edge";
 
 const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
 
 const getRandomname = () => {
-    return fetch('https://randomuser.me/api/')
-        .then(res => res.json())
-        .then(data => data.results[0].name.first)
-}
+  return fetch("https://randomuser.me/api/")
+    .then((res) => res.json())
+    .then((data) => data.results[0].name.first);
+};
 
-const getName = async () =>  {
-    return await delay(1000).then(() => getRandomname());
-}
+const getName = async () => {
+  return getRandomname();
+};
 
 const Home = async () => {
   const name = await getName();
@@ -26,7 +26,7 @@ const Home = async () => {
         Visit the <Link href="/about">About</Link> page.
       </p>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
