@@ -22,6 +22,11 @@
     "vercel": "^31.0.4"
   },
   "packageManager": "pnpm@8.6.9",
+  "pnpm": {
+    "overrides": {
+      "vercel": "31.0.4"
+    }
+  },
   "engines": {
     "node": "18.16.0",
     "yarn": "use pnpm instead",
